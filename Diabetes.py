@@ -21,12 +21,12 @@ st.write("""
         """)
 
 #Collects user input features into dataframe
-st.sidebar.header('User Input Features:')
-uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
-if uploaded_file is not None:
+#st.sidebar.header('User Input Features:')
+#uploaded_file = st.sidebar.file_uploader("Upload your input CSV file", type=["csv"])
+#if uploaded_file is not None:
     input_df = pd.read_csv(uploaded_file)
-else: 
-    def user_input_features():
+#else: 
+def user_input_features():
         st.sidebar.header('Manual Input')
         Glucose = st.sidebar.slider('Glucose Level : Plasma glucose concentration a 2 hours in an oral glucose tolerance test', 40, 200, 40, step = 20)
         BMI = st.sidebar.slider('Body Mass Index (BMI) : weight in kg/(height in m)^2', 15, 50, 15, step=5)
@@ -43,7 +43,7 @@ else:
                 'Insulin' : Insulin}
         features = pd.DataFrame(data, index=[0])
         return features
-    input_df = user_input_features()
+input_df = user_input_features()
 
 loaded_model = None
 diagnosis = " "
@@ -81,6 +81,7 @@ if loaded_model is not None:
             st.image(happy)
         else:
             st.image(sad)
+st.balloons()
         
 
     
