@@ -28,12 +28,12 @@ if uploaded_file is not None:
 else: 
     def user_input_features():
         st.sidebar.header('Manual Input')
-        Glucose = st.sidebar.slider('Glucose Level : Plasma glucose concentration a 2 hours in an oral glucose tolerance test', 40,200,20)
-        BMI = st.sidebar.slider('Body Mass Index (BMI) : weight in kg/(height in m)^2', 15, 50, 5)
-        Age = st.sidebar.slider('Age of the Person(year)', 20, 70, 5)
-        Pregnancies = st.sidebar.slider('Number of Pregnancies', 0, 15, 3)
-        DiabetesPedigreeFunction = st.sidebar.slider('Diabetes Pedigree Index : Genetic risk value', 0.5, 2.0, 0.5)
-        Insulin = st.sidebar.slider('Insulin Level : 2-Hour serum insulin(mu U/ml)', 0, 350, 50)
+        Glucose = st.sidebar.slider('Glucose Level : Plasma glucose concentration a 2 hours in an oral glucose tolerance test', 40, 200, 40, step = 20)
+        BMI = st.sidebar.slider('Body Mass Index (BMI) : weight in kg/(height in m)^2', 15, 50, 15, step=5)
+        Age = st.sidebar.slider('Age of the Person(year)', 20, 70, 20, step=5)
+        Pregnancies = st.sidebar.slider('Number of Pregnancies', 0, 15, 0, step=3)
+        DiabetesPedigreeFunction = st.sidebar.slider('Diabetes Pedigree Index : Genetic risk value', 0.5, 2.0, 0.5, step=0.5)
+        Insulin = st.sidebar.slider('Insulin Level : 2-Hour serum insulin(mu U/ml)', 0, 350, 0, step=50)
 
         data = {'Glucose' : Glucose,
                 'BMI' : BMI,
