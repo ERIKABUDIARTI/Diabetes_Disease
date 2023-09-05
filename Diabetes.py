@@ -27,7 +27,7 @@ st.write("""
     #input_df = pd.read_csv(uploaded_file)
 #else: 
 def user_input_features():
-        st.sidebar.header('Manual Input')
+        st.sidebar.header('Slide to set the value')
         Glucose = st.sidebar.slider('Glucose Level : Plasma glucose concentration a 2 hours in an oral glucose tolerance test', 40, 200, 40, step = 20)
         BMI = st.sidebar.slider('Body Mass Index (BMI) : weight in kg/(height in m)^2', 15, 50, 15, step=5)
         Age = st.sidebar.slider('Age of the Person(year)', 20, 70, 20, step=5)
@@ -50,7 +50,7 @@ diagnosis = " "
 
 # Add picture  
 img = Image.open("diabetes-ilust.jpg")
-st.image(img, width=500)
+st.image(img, width=1000)
 
 #Loading images
 happy = Image.open('happy-emoji.png')
